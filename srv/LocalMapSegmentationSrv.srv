@@ -1,0 +1,5 @@
+int32       local_map_id
+string[]    segmentation_layers
+---
+int32       local_map_id
+uint8[]      point_labels

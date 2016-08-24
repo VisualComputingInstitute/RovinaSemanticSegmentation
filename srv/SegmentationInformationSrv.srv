@@ -1,0 +1,5 @@
+---
+string[]    layer_names
+uint32[]     class_counts
+string[]    class_names
+uint8[]     class_colors

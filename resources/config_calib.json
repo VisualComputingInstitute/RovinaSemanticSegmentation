@@ -1,0 +1,42 @@
+{
+    "topics" : ["/camera_front_calib/depth/image_raw",
+                "/camera_front_calib/rgb/image_raw",
+                "/camera_left_calib/depth/image_raw",
+                "/camera_left_calib/rgb/image_raw",
+                "/camera_right_calib/depth/image_raw",
+                "/camera_right_calib/rgb/image_raw"],
+
+    "base_link_name" : "base_link",
+    "camera_frame_suffix" : "_rgb",
+
+    "color_codings" : [
+        {"name" : "object",
+         "coding" : [
+            { "name" : "Arch",      "color" : [255,   0, 255], "label" :  0 },
+            { "name" : "Ceiling",   "color" : [255,   0,   0], "label" :  1 },
+            { "name" : "Epigraph",  "color" : [255, 153, 153], "label" :  2 },
+            { "name" : "Floor",     "color" : [  0,   0, 255], "label" :  3 },
+            { "name" : "Fresco",    "color" : [255, 153,   0], "label" :  4 },
+            { "name" : "Niche",     "color" : [  0, 255, 255], "label" :  5 },
+            { "name" : "Pillar",    "color" : [  0, 255,   0], "label" :  6 },
+            { "name" : "Wall",      "color" : [255, 255,   0], "label" :  7 },
+            { "name" : "Unknown",   "color" : [ 50,  50,  50], "label" :  8 },
+            { "name" : "Other",     "color" : [255, 255, 255], "label" :  9 },
+            { "name" : "Void",      "color" : [  0,   0,   0], "label" : -1 }
+        ]},
+
+        {"name" : "material",
+         "coding" : [
+            { "name" : "Marble",         "color" : [255,   0, 255], "label" :  0 },
+            { "name" : "New bricks",     "color" : [  0, 255,   0], "label" :  1 },
+            { "name" : "Plaster",        "color" : [255, 153, 153], "label" :  2 },
+            { "name" : "Rubble",         "color" : [  0, 255, 255], "label" :  3 },
+            { "name" : "Tufa irregular", "color" : [  0,   0, 255], "label" :  4 },
+            { "name" : "Tufa regular",   "color" : [255,   0,   0], "label" :  5 },
+            { "name" : "Tufa wall",      "color" : [255, 255,   0], "label" :  6 },
+            { "name" : "Unknown",        "color" : [ 50,  50,  50], "label" :  7 },
+            { "name" : "Other",          "color" : [255, 255, 255], "label" :  8 },
+            { "name" : "Void",           "color" : [  0,   0,   0], "label" : -1 }
+        ]}
+    ]
+}

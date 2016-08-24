@@ -1,0 +1,31 @@
+<launch>
+    <arg name="t_color_1" default="/camera_front/rgb/image_raw"/>
+    <arg name="t_depth_1" default="/camera_front/depth/image_raw"/>
+    <arg name="t_color_2" default="/camera_right/rgb/image_raw"/>
+    <arg name="t_depth_2" default="/camera_right/depth/image_raw"/>
+    <arg name="t_color_3" default="/camera_left/rgb/image_raw"/>
+    <arg name="t_depth_3" default="/camera_left/depth/image_raw"/>
+    <arg name="base_link_frame_id" default="base_link"/>
+    <arg name="config" default="$(find semantic_segmentation)/resources/config.json"/>
+    <arg name="external_semantics" default="false"/>
+    <arg name="dump_clouds_to_tmp" default="false"/>
+
+    <group if="$(arg external_semantics)">
+        <node pkg="semantic_segmentation" type="single_frame_segmentation_server.py" name="single_frame_segmentation_server" output="screen">
+            <param name="config_file" value="$(arg config)" type="string"/>
+        </node>
+    </group>
+
+    <node pkg="semantic_segmentation" type="semantic_segmentation_node" name="semantic_segmentation_node" output="screen">
+        <param name="config_file" value="$(arg config)" type="string"/>
+        <param name="t_color_1" value="$(arg t_color_1)" type="string"/>
+        <param name="t_depth_1" value="$(arg t_depth_1)" type="string"/>
+        <param name="t_color_2" value="$(arg t_color_2)" type="string"/>
+        <param name="t_depth_2" value="$(arg t_depth_2)" type="string"/>
+        <param name="t_color_3" value="$(arg t_color_3)" type="string"/>
+        <param name="t_depth_3" value="$(arg t_depth_3)" type="string"/>
+        <param name="base_link_frame_id" value="$(arg base_link_frame_id)" type="string"/>
+        <param name="external_semantics" value="$(arg external_semantics)" type="bool"/>
+        <param name="dump_clouds_to_tmp" value="$(arg dump_clouds_to_tmp)" type="bool"/>
+    </node>
+</launch>

@@ -1,0 +1,94 @@
+{
+    "root_dir": "/data/work/Rovina/priscilla_merged/",
+
+    "color_dir"     : "rgb/",
+    "color_ext"     : ".png",
+
+    "depth_dir"     : "depth/",
+    "depth_ext"     : ".pgm",
+
+    "object_label_dir" : "obj_labels/",
+    "object_label_ext" : "_L.png",
+
+    "material_label_dir" : "mat_labels/",
+    "material_label_ext" : "_L.png",
+
+    "material_result_dir" : "mat_results/",
+    "material_result_ext" : ".png",
+
+    "object_result_dir" : "obj_results/",
+    "object_result_ext" : ".png",
+
+    "calibration_dir" : "calibration/",
+    "calibration_ext" : ".json",
+
+
+    "file_names_train" : "splits/all.json",
+    "file_names_test" : "splits/test.json", 
+
+    "training_label_prefix" : "shared",
+
+    "patch_size_old" : 45,
+    "patch_size" : 77,
+    "patch_size_reduce_old" : 9,
+    "patch_size_reduce" : 11,
+    "training_sample_stride" : 5,
+
+    "max_depth" : 30,
+    "min_split_sample" : 50,
+    "num_trees" : 4,
+
+    "feature_color_patch" : true,
+    "feature_depth" : true,
+    "feature_height" : true,
+    "feature_normal" : true,
+
+    "material_forest_file_name" : "models/forest_material.dat",
+    "object_forest_file_name" : "models/forest_object.dat",
+    "forest_file_name" : "models/forest_shared.dat",
+
+    "color_codings" : [
+         {"name" : "material",
+         "coding" : [
+            { "name" : "Marble",         "color" : [255,   0, 255], "label" :  0 },
+            { "name" : "New bricks",     "color" : [  0, 255,   0], "label" :  1 },
+            { "name" : "Plaster",        "color" : [255, 153, 153], "label" :  2 },
+            { "name" : "Rubble",         "color" : [  0, 255, 255], "label" :  3 },
+            { "name" : "Tufa irregular", "color" : [  0,   0, 255], "label" :  4 },
+            { "name" : "Tufa regular",   "color" : [255,   0,   0], "label" :  5 },
+            { "name" : "Tufa wall",      "color" : [255, 255,   0], "label" :  6 },
+            { "name" : "Unknown",        "color" : [ 50,  50,  50], "label" :  7 },
+            { "name" : "Other",          "color" : [255, 255, 255], "label" : -2 },
+            { "name" : "Void",           "color" : [  0,   0,   0], "label" : -1 }
+        ]},
+
+        {"name" : "object",
+         "coding" : [
+            { "name" : "Arch",      "color" : [255,   0, 255], "label" :  0 },
+            { "name" : "Ceiling",   "color" : [255,   0,   0], "label" :  1 },
+            { "name" : "Epigraph",  "color" : [255, 153, 153], "label" :  2 },
+            { "name" : "Floor",     "color" : [  0,   0, 255], "label" :  3 },
+            { "name" : "Fresco",    "color" : [255, 153,   0], "label" :  4 },
+            { "name" : "Niche",     "color" : [  0, 255, 255], "label" :  5 },
+            { "name" : "Pillar",    "color" : [  0, 255,   0], "label" :  6 },
+            { "name" : "Wall",      "color" : [255, 255,   0], "label" :  7 },
+            { "name" : "Unknown",   "color" : [ 50,  50,  50], "label" :  8 },
+            { "name" : "Other",     "color" : [255, 255, 255], "label" : -2 },
+            { "name" : "Void",      "color" : [  0,   0,   0], "label" : -1 }
+        ]}
+    ],
+
+    "use_dense_crf" : false,
+    "dcrf_xyz_kernel" : 0.5,
+    "dcrf_rgb_kernel" : 4.0,
+    "dcrf_kernel_weight" : 10.0,
+    "dcrf_iterations" : 10,
+
+    "rf_prediction_stride" : 2,
+
+    "depth_min" : 0.5,
+    "depth_max" : 15.0,
+
+    "keyframe_skip_rotation" : 0.1,
+    "keyframe_skip_translation" : 0.07
+}
